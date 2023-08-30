@@ -7,8 +7,8 @@ public class AccountModel {
 
     public AccountModel(){
     //Default data
-    accounts.add(new Account(1, 2000));
-    accounts.add(new Account(2, 3000));
+    accounts.add(new Account(123,"hello", 2000));
+    accounts.add(new Account(246, "january", 3000));
     }
 
     public static ArrayList<Account> getAllAccounts(){

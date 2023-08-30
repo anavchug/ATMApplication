@@ -9,7 +9,14 @@ public class Account {
         this.accountNumber = accountNumber;
         this.balance = balance;
     }
+    public Account(int accountNumber, String password, int balance){
+        this.accountNumber = accountNumber;
+        this.password = password;
+        this.balance = balance;
+    }
     
+    public Account() {
+    }
     public int getAccountNumber(){
         return accountNumber;
     }

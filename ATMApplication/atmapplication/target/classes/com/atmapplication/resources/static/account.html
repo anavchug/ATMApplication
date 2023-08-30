@@ -16,7 +16,6 @@
 </head>
 <body>
     <h1>ATM Interface</h1>
-    <!-- <div id="balance">Balance: $1000</div> -->
     <div id="balance">Balance: $<span id="currentBalance">{{initialBalance}}</span></div>
     <h2>Deposit Funds</h2>
     <input type="number" id="depositAmount" placeholder="Enter deposit amount">
@@ -30,14 +29,20 @@
     <script>
        let balance;
 
-    fetch('/account')
-    .then(response => response.text())
-    .then(html => {
-        document.body.innerHTML = html;
-        balance = parseFloat(document.getElementById("currentBalance").textContent); // Get the initial balance from the page
-        updateBalance(); // Initialize the balance display
-    })
-    .catch(error => console.error('Error fetching account page:', error));
+// Extract the account number from the URL query parameters
+const urlSearchParams = new URLSearchParams(window.location.search);
+const loggedInAccountNumber = urlSearchParams.get("accountNumber");
+
+// Fetch the account page for the logged-in account
+fetch(`/account?accountNumber=${loggedInAccountNumber}`)
+.then(response => response.text())
+.then(html => {
+    document.body.innerHTML = html;
+    balance = parseFloat(document.getElementById("currentBalance").textContent); // Get the initial balance from the page
+    updateBalance(); // Initialize the balance display
+})
+.catch(error => console.error('Error fetching account page:', error));
+
 
         function updateBalance() {
             document.getElementById("currentBalance").textContent = balance;
@@ -45,7 +50,7 @@
         function deposit() {
     const depositAmount = parseFloat(document.getElementById("depositAmount").value);
     if (!isNaN(depositAmount) && depositAmount > 0) {
-        fetch(`/deposit?accountNumber=1&depositAmount=${depositAmount}`, {  //for now accountNumber = 1 because we dont have a session functionality yet
+        fetch(`/deposit?accountNumber=${loggedInAccountNumber}&depositAmount=${depositAmount}`, {  //for now accountNumber = 1 because we dont have a session functionality yet
             method: "POST"
         })
         .then(response => response.text())
@@ -67,7 +72,7 @@
 function withdraw() {
     const withdrawAmount = parseFloat(document.getElementById("withdrawAmount").value);
     if (!isNaN(withdrawAmount) && withdrawAmount > 0) {
-        fetch(`/withdraw?accountNumber=1&withdrawAmount=${withdrawAmount}`, {
+        fetch(`/withdraw?accountNumber=${loggedInAccountNumber}&withdrawAmount=${withdrawAmount}`, {
             method: "POST"
         })
         .then(response => response.text())
@@ -90,7 +95,7 @@ function withdraw() {
     }
 }
 
-        updateBalance(); // Initialize the balance display
+    updateBalance(); // Initialize the balance display
     </script>
 </body>
 </html>
