@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Interface</title>
+    <link rel="stylesheet" href="/css/accountStyle.css">
+    <script src="/javascript/account.js"></script>
+</head>
+<body>
+    <div id="container">
+        <h1>ATM Application</h1>
+        <div id="balance">Balance: $<span id="currentBalance">{{initialBalance}}</span></div>
+        <h2>Deposit Funds</h2>
+        <input type="number" id="depositAmount" placeholder="Enter deposit amount">
+        <button onclick="deposit()">Deposit</button>
+        
+        <h2>Withdraw Funds</h2>
+        <input type="number" id="withdrawAmount" placeholder="Enter withdrawal amount">
+        <button onclick="withdraw()">Withdraw</button>
+
+        <h2>Show Transaction History</h2>
+        <div id="transactionHistoryContainer"></div>
+        <button id="showTransactionHistory">Show Transaction History</button>
+    </div>
+</body>
+</html>

@@ -25,7 +25,7 @@ import com.atmapplication.Model.AccountModel;
 public class LoginController {
     @GetMapping("/login")
     public ResponseEntity<InputStreamResource> loginPage() throws IOException {
-        ClassPathResource htmlFile = new ClassPathResource("com/atmapplication/resources/static/login.html");
+        ClassPathResource htmlFile = new ClassPathResource("static/login.html");
         String htmlContent = new String(htmlFile.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
 
         return ResponseEntity

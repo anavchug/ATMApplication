@@ -24,7 +24,7 @@ import com.atmapplication.Model.AccountModel;
 public class RegistrationController {
     @GetMapping("/register")
     public ResponseEntity<InputStreamResource> registerPage() throws IOException {
-        ClassPathResource htmlFile = new ClassPathResource("com/atmapplication/resources/static/register.html");
+        ClassPathResource htmlFile = new ClassPathResource("static/register.html");
         String htmlContent = new String(htmlFile.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
 
         return ResponseEntity

@@ -21,7 +21,7 @@ public class AccountController {
     //displays the account page for a given customer
     @GetMapping("/account")
     public ResponseEntity<InputStreamResource> accountPage(@RequestParam int accountNumber) throws IOException {
-        ClassPathResource htmlFile = new ClassPathResource("com/atmapplication/resources/static/account.html");
+        ClassPathResource htmlFile = new ClassPathResource("static/account.html");
         String htmlContent = new String(htmlFile.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
         
         Account loggedInAccount = AccountModel.getAccountByNumber(accountNumber);
