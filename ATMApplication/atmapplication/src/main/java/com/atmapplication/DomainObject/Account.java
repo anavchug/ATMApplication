@@ -1,9 +1,14 @@
 package com.atmapplication.DomainObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Account {
     private int accountNumber;
     private String password;
     private int balance;
+
+    private List<Transaction> transactionHistory;
     
     public Account(int accountNumber, int balance){
         this.accountNumber = accountNumber;
@@ -13,10 +18,11 @@ public class Account {
         this.accountNumber = accountNumber;
         this.password = password;
         this.balance = balance;
+
+        // Initialize transaction history list
+        transactionHistory = new ArrayList<>();
     }
     
-    public Account() {
-    }
     public int getAccountNumber(){
         return accountNumber;
     }
@@ -29,6 +35,14 @@ public class Account {
     }
     public String getPassword(){
         return password;
+    }
+    
+    public List<Transaction> getTransactionHistory() {
+        return transactionHistory;
+    }
+
+    public void addTransaction(Transaction transaction) {
+        transactionHistory.add(transaction);
     }
   
 }

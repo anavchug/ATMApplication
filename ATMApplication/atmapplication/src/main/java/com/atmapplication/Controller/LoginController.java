@@ -34,10 +34,7 @@ public class LoginController {
                 .body(new InputStreamResource(new ByteArrayInputStream(htmlContent.getBytes())));
     }
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestParam int accountNumber, @RequestParam String password) {
-        System.out.println("Account Number logged in is: " + accountNumber);
-        System.out.println("Password logged in is: " + password);
- 
+    public ResponseEntity<String> login(@RequestParam int accountNumber, @RequestParam String password) { 
         Account account = AccountModel.getAccountByNumber(accountNumber);
         if (account != null) {
             // Redirect to the account page after successful login
