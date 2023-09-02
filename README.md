@@ -27,7 +27,6 @@ Before you begin, ensure you have met the following requirements:
 - Go to the ATMApplication class and run it.
 
 4. Usage
-
 - Open a web browser and navigate to http://localhost:8080/login to access the login page.
 - You can use the provided sample accounts (account numbers: 123 and 246) or register a new account.
 - Once logged in, you can deposit or withdraw funds as needed.
