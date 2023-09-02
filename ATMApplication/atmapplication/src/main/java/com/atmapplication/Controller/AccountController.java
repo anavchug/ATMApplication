@@ -29,12 +29,7 @@ public class AccountController {
             int initialBalance = loggedInAccount.getBalance();
             System.out.println("Initial Balance: " + initialBalance);
             htmlContent = htmlContent.replace("{{initialBalance}}", String.valueOf(initialBalance));
-        } else {
-            // Handle the case where the account doesn't exist
-            // You could redirect the user to a login page or display an error message
-            
-        }
-
+        } 
         return ResponseEntity
                 .ok()
                 .contentType(MediaType.TEXT_HTML)
