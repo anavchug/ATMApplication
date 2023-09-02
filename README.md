@@ -39,6 +39,10 @@ Before you begin, ensure you have met the following requirements:
 - Once logged in, you can deposit or withdraw funds as needed.
 - You can also view your transaction history by clicking the "Show Transaction History" button.
 
+![Login Page](https://github.com/anavchug/ATMApplication/assets/72577896/7e2fe7ea-2a9f-409f-87fe-af4e365faa18)
+![Register Page](https://github.com/anavchug/ATMApplication/assets/72577896/0fc2360f-5e9f-4db3-aa9c-8a42637991e9)
+![Account Page](https://github.com/anavchug/ATMApplication/assets/72577896/162f1def-519a-4ccd-8e5e-83991c33dcc4)
+
 **Contributing**
 
   Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
