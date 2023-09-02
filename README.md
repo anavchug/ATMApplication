@@ -10,10 +10,10 @@ Table of Contents
 
 1. Features
    
-Login and Registration: Users can log in to their accounts or register for a new account.
-Deposit Funds: Account holders can deposit money into their accounts.
-Withdraw Funds: Account holders can withdraw money from their accounts.
-Transaction History: Users can view their transaction history.
+- Login and Registration: Users can log in to their accounts or register for a new account.
+- Deposit Funds: Account holders can deposit money into their accounts.
+- Withdraw Funds: Account holders can withdraw money from their accounts.
+- Transaction History: Users can view their transaction history.
 
 3. Prerequisites
    
@@ -38,7 +38,7 @@ Before you begin, ensure you have met the following requirements:
 
 5. Contributing
 
-Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
+  Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
 - Create a new branch for your feature or bug fix.
 - Make your changes and commit them.
 - Push your changes to your fork.
